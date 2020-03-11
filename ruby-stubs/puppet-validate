@@ -1,7 +1,6 @@
 require 'English'
 
 status = 0
-options = []
 ARGV.each do |arg|
   output = `puppet parser validate "#{arg}" 2>&1`
   next if $CHILD_STATUS.exitstatus == 0
