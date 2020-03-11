@@ -3,10 +3,6 @@ require 'English'
 status = 0
 options = []
 ARGV.each do |arg|
-  if arg =~ /^--.+=.+$/
-    options.append arg
-    next
-  end
   output = `puppet parser validate "#{arg}" 2>&1`
   next if $CHILD_STATUS.exitstatus == 0
   puts "#{arg}: failed Puppet validation"
